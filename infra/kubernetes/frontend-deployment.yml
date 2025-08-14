@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codearena-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: codearena-frontend
+  template:
+    metadata:
+      labels:
+        app: codearena-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: ghcr.io/ORG/REPO/frontend:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: codearena-frontend
+spec:
+  selector:
+    app: codearena-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  type: LoadBalancer

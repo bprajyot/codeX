@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codearena-executor
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: codearena-executor
+  template:
+    metadata:
+      labels:
+        app: codearena-executor
+    spec:
+      containers:
+        - name: executor
+          image: ghcr.io/ORG/REPO/executor:latest
+          ports:
+            - containerPort: 9090
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: codearena-executor
+spec:
+  selector:
+    app: codearena-executor
+  ports:
+    - name: http
+      port: 9090
+      targetPort: 9090

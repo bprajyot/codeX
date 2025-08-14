@@ -1,0 +1,82 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: codearena-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-codearena}
+      MYSQL_USER: ${MYSQL_USER:-codearena}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-codearena_pass}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: ["mysqld", "--default-authentication-plugin=mysql_native_password", "--max_connections=500"]
+
+  redis:
+    image: redis:7-alpine
+    container_name: codearena-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  backend:
+    build:
+      context: ../
+      dockerfile: backend/Dockerfile
+    container_name: codearena-backend
+    depends_on:
+      - mysql
+      - redis
+      - executor
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-codearena}
+      MYSQL_USER: ${MYSQL_USER:-codearena}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-codearena_pass}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET:-dev-secret}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000}
+      EXECUTOR_URL: http://executor:9090
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      FIREBASE_CLIENT_EMAIL: ${FIREBASE_CLIENT_EMAIL}
+      FIREBASE_PRIVATE_KEY: ${FIREBASE_PRIVATE_KEY}
+      FIREBASE_DATABASE_URL: ${FIREBASE_DATABASE_URL}
+    ports:
+      - "8080:8080"
+
+  executor:
+    build:
+      context: ../
+      dockerfile: executor/Dockerfile
+    container_name: codearena-executor
+    restart: unless-stopped
+    environment:
+      EXECUTION_TIME_LIMIT_SECONDS: ${EXECUTION_TIME_LIMIT_SECONDS:-5}
+    ports:
+      - "9090:9090"
+    # For stronger isolation, do not mount the Docker socket. This executor runs code inside the same container with ulimit/timeout.
+
+  frontend:
+    build:
+      context: ../
+      dockerfile: frontend/Dockerfile
+    container_name: codearena-frontend
+    environment:
+      VITE_API_BASE_URL: http://localhost:8080/api
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
+  redis_data:
