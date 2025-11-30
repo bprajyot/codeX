@@ -1,0 +1,13 @@
+Flask
+flask-cors
+python-dotenv
+requests
+supabase
+PyJWT
+gunicorn
+apscheduler
+APScheduler
+langchain
+langchain-google-genai
+google-generativeai
+python-dateutil
