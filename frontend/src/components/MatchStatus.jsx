@@ -38,6 +38,8 @@ export const MatchStatus = ({ match, currentUserId, player1, player2 }) => {
               <Clock className="w-5 h-5" />
               <span className="font-medium">In Progress</span>
             </div>
+            
+            
           )}
           
           {match.status === 'completed' && match.winner_id && (

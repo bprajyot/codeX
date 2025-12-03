@@ -150,9 +150,9 @@ export const Dashboard = () => {
                         <div className={`absolute -inset-1 bg-gradient-to-r ${medals[i].bg} opacity-20 blur-xl group-hover:opacity-40 transition duration-500`} />
                         <div className="relative bg-slate-900/70 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-6 flex items-center gap-5">
 
-                          <div className={`${rank} text-white font-black text-sm w-10 h-10 rounded-full flex items-center justify-center shadow-2xl`}>
+                          {/*<div className={`${rank} text-white font-black text-sm w-10 h-10 rounded-full flex items-center justify-center shadow-2xl`}>
                             #{i + 1}
-                          </div>
+                          </div>*/}
 
                           <div className="flex-1">
                             <div className="flex items-center gap-3">
