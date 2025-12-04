@@ -5,7 +5,7 @@ import gpt from "../assets/gpt.jpg"
 import grok from "../assets/grok.jpg"
 import pranav from "../assets/pranav.jpg"
 import ashish from "../assets/ashish.jpg"
-import prajyot from "../assets/prajyot.jpg"
+import prajyot from "../assets/prajyot.jpeg"
 
 const developers = [
 {
@@ -90,9 +90,9 @@ export default function About() {
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-24">
           {[
-            { icon: Zap, title: "Real-Time Sync", desc: "Live code collaboration powered by WebSocket" },
-            { icon: Trophy, title: "Elo-Based Matchmaking", desc: "Fair 1v1 battles with dynamic rating system" },
-            { icon: Code2, title: "Secure Execution", desc: "Docker + Judge0 sandbox for 50+ languages" }
+            { icon: Zap, title: "Real-Time 1V1 Battles", desc: "Live code collaboration powered by WebSocket" },
+            { icon: Trophy, title: "Ranking-based Matchmaking", desc: "Fair 1v1 battles with dynamic rating system" },
+            { icon: Code2, title: "Quick Execution", desc: "Docker + Judge0 sandbox for 50+ languages" }
           ].map((feat, i) => (
             <div
               key={i}
@@ -103,7 +103,7 @@ export default function About() {
               <h3 className="text-2xl font-black mb-3 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 {feat.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{feat.desc}</p>
+              {/* <p className="text-slate-400 text-sm leading-relaxed">{feat.desc}</p> */}
             </div>
           ))}
         </div>
@@ -111,7 +111,7 @@ export default function About() {
         {/* Tech Stack */}
         <div className="mb-24">
           <h2 className="text-5xl md:text-6xl font-black text-center mb-16 tracking-tighter">
-            Powered By <span className="text-emerald-400">Cutting-Edge</span> Tech
+            Powered By <span className="text-emerald-400">Modern </span> Tech
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {["React.js", "Python", "Flask", "Supabase"].map((tech) => (
@@ -153,7 +153,7 @@ export default function About() {
                   </div>
 
                   <h3 className="text-3xl font-black mb-2">{dev.name}</h3>
-                  <p className="text-emerald-400 font-bold text-lg mb-6">{dev.role}</p>
+                  {/* <p className="text-emerald-400 font-bold text-lg mb-6">{dev.role}</p> */}
                   {/* <p className="text-slate-300 text-sm italic leading-relaxed px-4 mb-8">
                     "{dev.contribution}"
                   </p> */}

@@ -86,7 +86,7 @@ export const Ranked = () => {
                   </div>
 
                   <h2 className="text-4xl font-black text-white mb-4">Finding Worthy Opponent...</h2>
-                  <p className="text-xl text-slate-400 mb-10">Matching you with a player near {profile?.elo || 1200} ELO</p>
+                  <p className="text-xl text-slate-400 mb-10">Matching you with a player near {profile?.elo || 1200} Ratings</p>
 
                   <div className="flex justify-center gap-4 mb-10">
                     <div className="w-3 h-3 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -134,7 +134,7 @@ export const Ranked = () => {
                   <div className={`relative overflow-hidden bg-gradient-to-br ${difficulty.bg} border ${difficulty.border} rounded-2xl p-8`}>
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-slate-400 text-sm mb-2">Based on your {profile?.elo} ELO</p>
+                        <p className="text-slate-400 text-sm mb-2">Based on your {profile?.elo} Ratings </p>
                         <p className="text-4xl font-black text-white">
                           You will face <span className={difficulty.color}>{difficulty.level}</span> problems
                         </p>
@@ -194,10 +194,10 @@ export const Ranked = () => {
               </h3>
               <div className="space-y-6">
                 {[
-                  'Matched with similar ELO opponent',
+                  'Matched with similar Rating opponent',
                   'Both get the same problem',
                   'First correct submission wins',
-                  'Winner gains ELO • Loser loses ELO'
+                  'Winner gains Rating • Loser loses Rating'
                 ].map((step, i) => (
                   <div key={i} className="flex items-center gap-5">
                     <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-black text-sm shadow-lg">

@@ -228,7 +228,7 @@ export const Practice = () => {
         {/* Bottom Note */}
         <div className="mt-16 text-center">
           <p className="text-sm text-slate-500">
-            Practice mode does not affect your ELO • Focus on learning and mastery
+            Practice mode does not affect your Ratings • Focus on learning and mastery
           </p>
         </div>
       </div>

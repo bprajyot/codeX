@@ -39,7 +39,7 @@ export const Casual = () => {
 
               <div>
                 <h1 className="text-5xl font-black text-white tracking-tighter">Casual Arena</h1>
-                <p className="text-xl text-slate-400 mt-2 font-light">No ELO • No Pressure • Pure Growth</p>
+                <p className="text-xl text-slate-400 mt-2 font-light">No Ratings • No Pressure • Pure Growth</p>
               </div>
             </div>
 
@@ -106,7 +106,7 @@ export const Casual = () => {
                       <Shield className="w-16 h-16 text-emerald-400" />
                     </div>
                     <div>
-                      <h3 className="text-4xl font-black text-white">Your ELO is 100% Protected</h3>
+                      <h3 className="text-4xl font-black text-white">Your Rating is 100% Protected</h3>
                       <p className="text-xl text-emerald-400 font-light mt-2">Play freely — nothing counts</p>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ export const Casual = () => {
                     { icon: Zap, title: 'Real Opponents', desc: 'Same matchmaking as ranked' },
                     { icon: Coffee, title: 'Warm Up Freely', desc: 'Perfect before ranked sessions' },
                     { icon: Target, title: 'Master Patterns', desc: 'Try new approaches safely' },
-                    { icon: Heart, title: 'Learn Faster', desc: 'Mistakes don’t cost ELO' },
+                    { icon: Heart, title: 'Learn Faster', desc: 'Mistakes don’t cost Ratings' },
                     { icon: Swords, title: 'Pure Fun', desc: 'Enjoy coding battles' }
                   ].map((item, i) => {
                     const Icon = item.icon
