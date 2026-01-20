@@ -4,16 +4,16 @@ The ultimate 1v1 competitive coding battle arena with live code sync, AI-powered
 ---
 
 ## Features
-✅ **Real-Time 1v1 Battles** – Compete head-to-head in live coding matches
-✅ **AI-Powered Judging** – Instant execution and automated scoring
-✅ **Multiple Game Modes** – Ranked, Casual, Custom, and Practice modes
-✅ **AI Code Detection** – Advanced plagiarism detection system
-✅ **Contextual Hints** – Get AI-generated hints to guide your coding
-✅ **ELO Rating System** – Track your progress and climb the leaderboards
-✅ **Problem Difficulty Scaling** – Challenges adapt to your skill level
-✅ **Real-Time Collaboration** – Watch your opponent's code in real-time
-✅ **Cross-Platform Support** – Works on any modern browser
-✅ **Responsive Design** – Optimized for all screen sizes
+- **Real-Time 1v1 Battles** – Compete head-to-head in live coding matches
+- **AI-Powered Judging** – Instant execution and automated scoring
+- **Multiple Game Modes** – Ranked, Casual, Custom, and Practice modes
+- **AI Code Detection** – Advanced plagiarism detection system
+- **Contextual Hints** – Get AI-generated hints to guide your coding
+- **ELO Rating System** – Track your progress and climb the leaderboards
+- **Problem Difficulty Scaling** – Challenges adapt to your skill level
+- **Real-Time Collaboration** – Watch your opponent's code in real-time
+- **Cross-Platform Support** – Works on any modern browser
+- **Responsive Design** – Optimized for all screen sizes
 
 ---
 
